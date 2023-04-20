@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaQuestionCircle } from "react-icons/fa";
 
 const HoverableIcon = ({ handleMouseOver, handleMouseOut }) => {
 	return (
 		<FaQuestionCircle
-			className="text-3xl"
+			className="text-3xl invisible md:visible"
 			onMouseOver={handleMouseOver}
 			onMouseOut={handleMouseOut}
 		/>
@@ -20,7 +20,7 @@ const HoverText = () => {
 	);
 };
 
-const HoverForRules = () => {
+const HoverRules = () => {
 	const [isHovering, setIsHovering] = useState(false);
 	const handleMouseOver = () => {
 		setIsHovering(true);
@@ -41,4 +41,4 @@ const HoverForRules = () => {
 	);
 };
 
-export default HoverForRules;
+export default HoverRules;

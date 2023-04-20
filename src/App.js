@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CardBoard from "./components/CardBoard.js";
 import Footer from "./components/Footer.js";
-import HoverExample from "./components/Hover";
+import HoverRules from "./components/Hover";
 
 function App() {
 	const [score, setScore] = useState(0);
@@ -26,7 +26,7 @@ function App() {
 			<div className=" flex-grow">
 				<header className="flex justify-center items-center">
 					<p className="text-5xl m-3">Plant memory game</p>
-					<HoverExample />
+					<HoverRules />
 				</header>
 				<p className="text-2xl">
 					Your score: {score} Best score: {bestScore}
