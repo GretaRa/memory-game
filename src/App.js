@@ -6,22 +6,20 @@ import HoverExample from "./components/Hover";
 function App() {
 	const [score, setScore] = useState(0);
 	const [bestScore, setBestScore] = useState(0);
+	const [reset, setReset] = useState(true);
 
 	const handleBestScore = () => {
 		if (score > bestScore) {
 			setBestScore(() => score);
 		}
+		setReset(true);
 		setScore(0);
 	};
 
 	const incrementScore = () => {
 		setScore(() => score + 1);
+		setReset(false);
 	};
-	// the card is clicked -> change state for that card to 1 +
-	//shuffle cards after clicked +
-	// the score gets increased if the state is 0 +
-	//if the state is already 1 -> the score resets, the card state resets
-	//the best score gets updated with the score state +
 
 	return (
 		<div className="App text-center flex flex-col h-screen">
@@ -37,6 +35,7 @@ function App() {
 					<CardBoard
 						incrementScore={incrementScore}
 						handleBestScore={handleBestScore}
+						reset={reset}
 					/>
 				</div>
 			</div>

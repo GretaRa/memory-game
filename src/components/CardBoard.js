@@ -86,6 +86,7 @@ const CardBoard = (props) => {
 						randomizeCards={randomizeCards}
 						incrementScore={props.incrementScore}
 						handleBestScore={props.handleBestScore}
+						reset={props.reset}
 					/>
 				);
 			})}

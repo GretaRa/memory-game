@@ -6,24 +6,24 @@ const Card = ({
 	randomizeCards,
 	incrementScore,
 	handleBestScore,
+	reset,
 }) => {
-	const [clicked, setClicked] = useState(0);
+	const [clicked, setClicked] = useState(false);
 
 	useEffect(() => {
-		randomizeCards();
-	}, []);
+		if (reset) {
+			setClicked(false);
+		}
+	}, [reset]);
 
 	const handleClick = () => {
-		randomizeCards();
-		setClicked(() => 1);
-
-		if (clicked === 1) {
+		setClicked(!clicked);
+		if (clicked) {
 			handleBestScore();
-			setClicked(0); //make this for all cards
-			console.log("loss");
 		} else {
 			incrementScore();
 		}
+		randomizeCards();
 	};
 
 	return (
